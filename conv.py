@@ -26,7 +26,11 @@ def set_sim_constants(boxsize_cMpc):
 	#hf.print_msg('Setting constants for boxsize=%.3f cMpc' % boxsize_cMpc)
 	boxsize = boxsize_cMpc
 	LB = boxsize/const.h	
-	if utils.flt_comp(boxsize, 425.):
+	#First argument is added by me
+	if utils.flt_comp(boxsize, 500.):
+		utils.print_msg('Setting conversion factors for 500/h Mpc box')
+		nbox_fine = 13824
+	elif utils.flt_comp(boxsize, 425.):
 		utils.print_msg('Setting conversion factors for 425/h Mpc box')
 		nbox_fine = 10976
 	elif utils.flt_comp(boxsize, 114.):
